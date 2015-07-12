@@ -10,16 +10,8 @@ class ServiceLevelContext implements Context, SnippetAcceptingContext
     /** @var Name */
     private $name;
 
-    /** @var HelloService */
-    private $helloService;
-
     /** @var string */
     private $result;
-
-    public function __construct()
-    {
-        $this->helloService = new HelloService();
-    }
 
     /**
      * @Given My name is :name
@@ -34,7 +26,8 @@ class ServiceLevelContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        $this->result = $this->helloService->getGreeting($this->name);
+        $helloService = new HelloService();
+        $this->result = $helloService->getGreeting($this->name);
     }
 
     /**
