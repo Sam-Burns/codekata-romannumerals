@@ -1,4 +1,4 @@
-travis-badge
+[![Build Status](https://travis-ci.org/Sam-Burns/codekata-romannumerals.svg?branch=master)](https://travis-ci.org/Sam-Burns/codekata-romannumerals)
 
 Roman Numerals Code Kata
 ========================
