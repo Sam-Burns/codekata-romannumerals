@@ -1,9 +1,15 @@
 services:
 
   codekata.application.application:
-    class:     "\CodeKata\RomanNumerals\Application\Application"
-    arguments: ["@codekata.application.hellocommand"]
+    class: "\CodeKata\RomanNumerals\Application\Application"
+    arguments:
+      - "@codekata.application.symfony-console-application"
+      - "@codekata.application.hello-command"
 
-  codekata.application.hellocommand:
+  codekata.application.hello-command:
     class: "\CodeKata\RomanNumerals\Application\HelloCommand"
-    arguments: ["@codekata.domain.helloservice"]
+    arguments:
+      - "@codekata.domain.hello-service"
+
+  codekata.application.symfony-console-application:
+    class: "\Symfony\Component\Console\Application"

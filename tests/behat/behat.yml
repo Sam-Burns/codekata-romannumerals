@@ -9,7 +9,7 @@ default:
             contexts: [ ServiceLevelContext ]
 
 
-        servicelevel:
+        cli:
             paths:    [ %paths.base%/features/feature_files ]
             filters:
                 tags: ~@wip&&@critical

@@ -4,7 +4,7 @@ Feature: Being greeted by name
   I want to give my name and be greeted.
 
 
-  @critical
+  @critical @wip
   Scenario: Being greeted by name
     Given My name is 'Sam'
     When I ask to be said hello to
