@@ -2,7 +2,7 @@
 
     <testsuites>
         <testsuite name="All">
-            <directory>ProjectNamespaceTest</directory>
+            <directory>CodeKata</directory>
         </testsuite>
     </testsuites>
 

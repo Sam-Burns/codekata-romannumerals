@@ -1,8 +1,7 @@
 suites:
 
     Main:
-        namespace: Xxxxxx
-        spec_prefix: XxxxxxSpec
+        namespace: CodeKata
+        spec_prefix: CodeKata\Spec
         src_path: src/
         spec_path:  tests/phpspec/
-        psr4_prefix: Xxxxxx

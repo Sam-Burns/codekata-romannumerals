@@ -1,0 +1,8 @@
+services:
+
+  codekata.application.application:
+    class:     "\CodeKata\RomanNumerals\Application\Application"
+    arguments: ["@codekata.application.hellocommand"]
+
+  codekata.application.hellocommand:
+    class: "\CodeKata\RomanNumerals\Application\HelloCommand"
