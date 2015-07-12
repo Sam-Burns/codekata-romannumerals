@@ -1,17 +1,22 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Context\Context;
 
 class CliContext implements Context, SnippetAcceptingContext
 {
+    /** @var string */
+    private $name;
+
+    /** @var string */
+    private $result;
+
     /**
-     * @Given My name is Sam
+     * @Given My name is :name
      */
-    public function myNameIsSam()
+    public function myNameIs($name)
     {
-        throw new PendingException();
+        $this->name = $name;
     }
 
     /**
@@ -19,14 +24,14 @@ class CliContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        throw new PendingException();
+        exec('php scripts/run.php hello ' . $this->name, $this->result);
     }
 
     /**
-     * @Then I should see :arg1
+     * @Then I should see :expectedOutput
      */
-    public function iShouldSee($arg1)
+    public function iShouldSee($expectedOutput)
     {
-        throw new PendingException();
+        PHPUnit_Framework_Assert::assertEquals($expectedOutput, [$this->result]);
     }
 }
