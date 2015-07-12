@@ -4,11 +4,13 @@ default:
 
         servicelevel:
             paths:    [ %paths.base%/features/feature_files ]
-            filters:  { tags: ~wip }
+            filters:
+                tags: ~@wip
             contexts: [ ServiceLevelContext ]
 
 
         servicelevel:
             paths:    [ %paths.base%/features/feature_files ]
-            filters:  { tags: ~wip&&critical }
+            filters:
+                tags: ~@wip&&@critical
             contexts: [ CliContext ]
