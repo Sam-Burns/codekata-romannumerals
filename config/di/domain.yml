@@ -1,1 +1,4 @@
 services:
+
+  codekata.domain.helloservice:
+    class:     "\CodeKata\RomanNumerals\Domain\HelloService"

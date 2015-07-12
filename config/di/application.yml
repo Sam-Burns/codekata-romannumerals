@@ -6,3 +6,4 @@ services:
 
   codekata.application.hellocommand:
     class: "\CodeKata\RomanNumerals\Application\HelloCommand"
+    arguments: ["@codekata.domain.helloservice"]

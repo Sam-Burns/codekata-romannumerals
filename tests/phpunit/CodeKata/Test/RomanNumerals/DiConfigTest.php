@@ -10,20 +10,16 @@ class DiConfigTest extends TestCase
     /** @var ContainerInterface */
     private $diContainer;
 
-    public function setUp()
-    {
-        $this->diContainer = new ServiceContainer();
-        $this->diContainer->addConfigFilesFromFolder(APPLICATION_ROOT_DIR . '/config/di/');
-    }
-
-    public function tearDown()
-    {
-        $this->diContainer->reset();
-    }
-
     public function testRetrievingApplicationObjectGraph()
     {
+        // ARRANGE
+        $this->diContainer = new ServiceContainer();
+        $this->diContainer->addConfigFilesFromFolder(APPLICATION_ROOT_DIR . '/config/di/');
+
+        // ACT
         $result = $this->diContainer->get('codekata.application.application');
+
+        // ASSERT
         $this->assertInstanceOf('\CodeKata\RomanNumerals\Application\Application', $result);
     }
 }

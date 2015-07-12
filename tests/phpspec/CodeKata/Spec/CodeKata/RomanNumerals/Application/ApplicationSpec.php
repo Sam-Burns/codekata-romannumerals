@@ -1,5 +1,4 @@
 <?php
-
 namespace CodeKata\Spec\CodeKata\RomanNumerals\Application;
 
 use PhpSpec\ObjectBehavior;
