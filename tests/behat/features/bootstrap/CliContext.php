@@ -32,6 +32,6 @@ class CliContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSee($expectedOutput)
     {
-        PHPUnit_Framework_Assert::assertEquals($expectedOutput, [$this->result]);
+        PHPUnit_Framework_Assert::assertEquals([$expectedOutput], $this->result);
     }
 }
