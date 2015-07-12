@@ -1,17 +1,32 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Context\Context;
+use CodeKata\RomanNumerals\Domain\HelloService;
+use CodeKata\RomanNumerals\Domain\Name;
 
 class ServiceLevelContext implements Context, SnippetAcceptingContext
 {
-    /**
-     * @Given My name is Sam
-     */
-    public function myNameIsSam()
+    /** @var Name */
+    private $name;
+
+    /** @var HelloService */
+    private $helloService;
+
+    /** @var string */
+    private $result;
+
+    public function __construct()
     {
-        throw new PendingException();
+        $this->helloService = new HelloService();
+    }
+
+    /**
+     * @Given My name is :name
+     */
+    public function myNameIs($name)
+    {
+        $this->name = new Name($name);
     }
 
     /**
@@ -19,14 +34,14 @@ class ServiceLevelContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        throw new PendingException();
+        $this->result = $this->helloService->sayHello($this->name);
     }
 
     /**
-     * @Then I should see :arg1
+     * @Then I should see :expectedOutput
      */
-    public function iShouldSee($arg1)
+    public function iShouldSee($expectedOutput)
     {
-        throw new PendingException();
+        PHPUnit_Framework_Assert::assertEquals($expectedOutput, $this->result);
     }
 }
