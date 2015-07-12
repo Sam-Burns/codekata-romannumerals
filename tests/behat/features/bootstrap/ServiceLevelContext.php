@@ -34,7 +34,7 @@ class ServiceLevelContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        $this->result = $this->helloService->sayHello($this->name);
+        $this->result = $this->helloService->getGreeting($this->name);
     }
 
     /**

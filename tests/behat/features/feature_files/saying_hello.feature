@@ -9,7 +9,7 @@ Feature: Being greeted by name
     When I ask to be said hello to
     Then I should see 'Hello, Sam'
 
-  @wip
+
   Scenario: Being greeted by name, with a more complicated name
     Given My name is 'fdslnfdslgdskglns'
     When I ask to be said hello to
