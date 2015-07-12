@@ -24,7 +24,7 @@ class CliContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        exec('php scripts/run.php hello ' . $this->name, $this->result);
+        exec('php scripts/run.php hello ' . $this->name . ' 2>/dev/null', $this->result);
     }
 
     /**
