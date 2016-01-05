@@ -29,6 +29,8 @@ class HelloCommandSpec extends ObjectBehavior
         //ARRANGE
 
         // Some shit the Symfony Console component needs to be testable
+        $input->hasArgument('command')->willReturn(true);
+        $input->getArgument('command')->willReturn('hello');
         $input->bind(Argument::any())->shouldBeCalled();
         $input->isInteractive(Argument::any())->shouldBeCalled();
         $input->validate(Argument::any())->shouldBeCalled();
