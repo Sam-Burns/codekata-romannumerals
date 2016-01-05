@@ -12,10 +12,6 @@ class Application
     /** @var SymfonyConsoleCommand[] */
     private $commands;
 
-    /**
-     * @param SymfonyConsoleApplication $symfonyConsoleApplication
-     * @param HelloCommand              $helloCommand
-     */
     public function __construct(SymfonyConsoleApplication $symfonyConsoleApplication, HelloCommand $helloCommand)
     {
         $this->symfonyConsoleApplication = $symfonyConsoleApplication;

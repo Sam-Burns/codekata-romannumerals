@@ -6,18 +6,12 @@ class Name
     /** @var string */
     private $nameAsString;
 
-    /**
-     * @param string $nameAsString
-     */
-    public function __construct($nameAsString)
+    public function __construct(string $nameAsString)
     {
         $this->nameAsString = $nameAsString;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->nameAsString;
     }

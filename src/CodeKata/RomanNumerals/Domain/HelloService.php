@@ -3,11 +3,7 @@ namespace CodeKata\RomanNumerals\Domain;
 
 class HelloService
 {
-    /**
-     * @param Name $name
-     * @return string
-     */
-    public function getGreeting(Name $name)
+    public function getGreeting(Name $name): string
     {
         return 'Hello, ' . $name;
     }

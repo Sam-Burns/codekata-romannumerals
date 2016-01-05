@@ -13,9 +13,6 @@ class HelloCommand extends Command
     /** @var HelloService */
     private $helloService;
 
-    /**
-     * @param HelloService $helloService
-     */
     public function __construct(HelloService $helloService)
     {
         parent::__construct();
