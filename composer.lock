@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "401a449741028b5aa9fcba2a695e1da6",
-    "content-hash": "caeacc741b67f75d54dfac3960288135",
+    "hash": "6445e925f3aeccb2855d5276712f4a28",
+    "content-hash": "b7529f3910f3e7e6ba8bad84c1aab229",
     "packages": [
         {
             "name": "sam-burns/psr11-symfony",
@@ -1931,6 +1931,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.0.0"
+    },
     "platform-dev": []
 }
