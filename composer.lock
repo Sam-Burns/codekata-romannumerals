@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "193a54a32966dcf94275ac54165dc4c8",
-    "content-hash": "e8ce016481188f20ac226ff8b90d7345",
+    "hash": "f117f4b5b7dcf476aa348fa39dbff96c",
+    "content-hash": "10fe64520ff2da7632aa82745474a147",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -155,16 +155,16 @@
         },
         {
             "name": "ultra-lite/container",
-            "version": "1.0.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ultra-lite/container.git",
-                "reference": "0e6af48674de1a2c03212031acab43bb9f09aab6"
+                "reference": "096a698101fbec6ba3bf93641fa29a7fbab3fd22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ultra-lite/container/zipball/0e6af48674de1a2c03212031acab43bb9f09aab6",
-                "reference": "0e6af48674de1a2c03212031acab43bb9f09aab6",
+                "url": "https://api.github.com/repos/ultra-lite/container/zipball/096a698101fbec6ba3bf93641fa29a7fbab3fd22",
+                "reference": "096a698101fbec6ba3bf93641fa29a7fbab3fd22",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2016-01-05 16:44:28"
+            "time": "2016-01-06 17:48:18"
         }
     ],
     "packages-dev": [
