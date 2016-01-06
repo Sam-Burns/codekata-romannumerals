@@ -6,9 +6,9 @@ return [
 
     'codekata.application.application' =>
         function (Container $container) {
-            $consoleAppolication = $container->get('codekata.application.symfony-console-application');
+            $consoleApplication = $container->get('codekata.application.symfony-console-application');
             $helloCommand        = $container->get('codekata.application.hello-command');
-            return new \CodeKata\RomanNumerals\Application\Application($consoleAppolication, $helloCommand);
+            return new \CodeKata\RomanNumerals\Application\Application($consoleApplication, $helloCommand);
         },
 
     'codekata.application.hello-command' =>
