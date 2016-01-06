@@ -2,8 +2,8 @@
 namespace CodeKata\Test\RomanNumerals;
 
 use PHPUnit_Framework_TestCase as TestCase;
-use Psr\Container\ContainerInterface;
-use SamBurns\Psr11Symfony\ServiceContainer;
+use UltraLite\Container\Container;
+use Interop\Container\ContainerInterface;
 
 class DiConfigTest extends TestCase
 {
@@ -13,8 +13,9 @@ class DiConfigTest extends TestCase
     public function testRetrievingApplicationObjectGraph()
     {
         // ARRANGE
-        $this->diContainer = new ServiceContainer();
-        $this->diContainer->addConfigFilesFromFolder(APPLICATION_ROOT_DIR . '/config/di/');
+        $this->diContainer = new Container();
+        $this->diContainer->setServiceFactories(require APPLICATION_ROOT_DIR . '/config/di/application.php');
+        $this->diContainer->setServiceFactories(require APPLICATION_ROOT_DIR . '/config/di/domain.php');
 
         // ACT
         $result = $this->diContainer->get('codekata.application.application');
