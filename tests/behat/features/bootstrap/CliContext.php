@@ -11,7 +11,7 @@ class CliContext implements Context
     private $result;
 
     /**
-     * @Given My name is :name
+     * @Given my name is :name
      */
     public function myNameIs($name)
     {

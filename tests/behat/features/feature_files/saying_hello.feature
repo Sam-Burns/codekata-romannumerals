@@ -6,12 +6,12 @@ Feature: Being greeted by name
 
   @critical
   Scenario: Being greeted by name
-    Given My name is 'Sam'
+    Given my name is 'Sam'
     When I ask to be said hello to
     Then I should see 'Hello, Sam'
 
 
   Scenario: Being greeted by name, with a more complicated name
-    Given My name is 'fdslnfdslgdskglns'
+    Given my name is 'fdslnfdslgdskglns'
     When I ask to be said hello to
     Then I should see 'Hello, fdslnfdslgdskglns'
