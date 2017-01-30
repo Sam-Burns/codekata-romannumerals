@@ -1,21 +1,22 @@
 <?php
-namespace CodeKata\RomanNumerals\Application;
+namespace RomanNumeralsKata;
 
 use Symfony\Component\Console\Application as SymfonyConsoleApplication;
-use Symfony\Component\Console\Command\Command as SymfonyConsoleCommand;
+use Symfony\Component\Console\Command\Command;
+use RomanNumeralsKata\Greeting\Command as GreetingCommand;
 
 class Application
 {
     /** @var SymfonyConsoleApplication */
     private $symfonyConsoleApplication;
 
-    /** @var SymfonyConsoleCommand[] */
+    /** @var Command[] */
     private $commands;
 
-    public function __construct(SymfonyConsoleApplication $symfonyConsoleApplication, HelloCommand $helloCommand)
+    public function __construct(SymfonyConsoleApplication $symfonyConsoleApplication, GreetingCommand $greetingCommand)
     {
         $this->symfonyConsoleApplication = $symfonyConsoleApplication;
-        $this->commands = [$helloCommand];
+        $this->commands = [$greetingCommand];
     }
 
     public function run()

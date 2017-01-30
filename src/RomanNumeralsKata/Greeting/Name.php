@@ -1,5 +1,5 @@
 <?php
-namespace CodeKata\RomanNumerals\Domain;
+namespace RomanNumeralsKata\Greeting;
 
 class Name
 {

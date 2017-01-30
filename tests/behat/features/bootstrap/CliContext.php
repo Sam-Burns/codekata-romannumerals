@@ -1,9 +1,8 @@
 <?php
 
-use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Context\Context;
 
-class CliContext implements Context, SnippetAcceptingContext
+class CliContext implements Context
 {
     /** @var string */
     private $name;

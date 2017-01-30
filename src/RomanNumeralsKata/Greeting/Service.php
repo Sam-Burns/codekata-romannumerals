@@ -1,7 +1,7 @@
 <?php
-namespace CodeKata\RomanNumerals\Domain;
+namespace RomanNumeralsKata\Greeting;
 
-class HelloService
+class Service
 {
     public function getGreeting(Name $name): string
     {

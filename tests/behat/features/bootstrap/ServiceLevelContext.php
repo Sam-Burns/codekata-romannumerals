@@ -1,11 +1,10 @@
 <?php
 
-use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Context\Context;
-use CodeKata\RomanNumerals\Domain\HelloService;
-use CodeKata\RomanNumerals\Domain\Name;
+use RomanNumeralsKata\Greeting\Name;
+use RomanNumeralsKata\Greeting\Service as GreetingService;
 
-class ServiceLevelContext implements Context, SnippetAcceptingContext
+class ServiceLevelContext implements Context
 {
     /** @var Name */
     private $name;
@@ -26,7 +25,7 @@ class ServiceLevelContext implements Context, SnippetAcceptingContext
      */
     public function iAskToBeSaidHelloTo()
     {
-        $helloService = new HelloService();
+        $helloService = new GreetingService();
         $this->result = $helloService->getGreeting($this->name);
     }
 

@@ -1,7 +1,7 @@
 suites:
 
     Main:
-        namespace: CodeKata
-        spec_prefix: CodeKata\Spec
+        namespace: RomanNumeralsKata
+        spec_prefix: RomanNumeralsKata\Spec
         src_path: src/
         spec_path:  tests/phpspec/

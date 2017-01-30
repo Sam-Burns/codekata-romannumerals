@@ -1,19 +1,17 @@
 <?php
-namespace CodeKata\Spec\CodeKata\RomanNumerals\Domain;
+namespace RomanNumeralsKata\Spec\RomanNumeralsKata\Greeting;
 
+use RomanNumeralsKata\Greeting\Name;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
+/**
+ * @mixin Name
+ */
 class NameSpec extends ObjectBehavior
 {
     function let()
     {
         $this->beConstructedWith('Sam');
-    }
-
-    function it_is_initializable()
-    {
-        $this->shouldHaveType('\CodeKata\RomanNumerals\Domain\Name');
     }
 
     function it_can_return_the_name()

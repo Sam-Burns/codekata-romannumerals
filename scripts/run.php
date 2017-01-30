@@ -1,11 +1,12 @@
 <?php
-require_once dirname(__DIR__) . '/src/bootstrap.php';
 
-$diContainer = new \UltraLite\Container\Container();
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$diContainer->configureFromFile(APPLICATION_ROOT_DIR . '/config/di/application.php');
-$diContainer->configureFromFile(APPLICATION_ROOT_DIR . '/config/di/domain.php');
+$diContainer = new UltraLite\Container\Container();
 
-$application = $diContainer->get('codekata.application.application');
+$diContainer->configureFromFile(__DIR__ . '/../config/di/application.php');
+$diContainer->configureFromFile(__DIR__ . '/../config/di/greeting.php');
+
+$application = $diContainer->get('roman-numerals-kata.application');
 
 $application->run();

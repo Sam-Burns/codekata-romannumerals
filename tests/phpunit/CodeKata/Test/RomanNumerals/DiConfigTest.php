@@ -3,7 +3,7 @@ namespace CodeKata\Test\RomanNumerals;
 
 use PHPUnit_Framework_TestCase as TestCase;
 use UltraLite\Container\Container;
-use Interop\Container\ContainerInterface;
+use RomanNumeralsKata\Application;
 
 class DiConfigTest extends TestCase
 {
@@ -11,13 +11,13 @@ class DiConfigTest extends TestCase
     {
         // ARRANGE
         $diContainer = new Container();
-        $diContainer->configureFromFile(APPLICATION_ROOT_DIR . '/config/di/application.php');
-        $diContainer->configureFromFile(APPLICATION_ROOT_DIR . '/config/di/domain.php');
+        $diContainer->configureFromFile(__DIR__ . '/../../../../../config/di/application.php');
+        $diContainer->configureFromFile(__DIR__ . '/../../../../../config/di/greeting.php');
 
         // ACT
-        $result = $diContainer->get('codekata.application.application');
+        $result = $diContainer->get('roman-numerals-kata.application');
 
         // ASSERT
-        $this->assertInstanceOf('\CodeKata\RomanNumerals\Application\Application', $result);
+        $this->assertInstanceOf(Application::class, $result);
     }
 }

@@ -1,22 +1,20 @@
 <?php
-namespace CodeKata\RomanNumerals\Application;
+namespace RomanNumeralsKata\Greeting;
 
-use CodeKata\RomanNumerals\Domain\HelloService;
-use CodeKata\RomanNumerals\Domain\Name;
-use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Command\Command as SymfonyConsoleCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class HelloCommand extends Command
+class Command extends SymfonyConsoleCommand
 {
-    /** @var HelloService */
-    private $helloService;
+    /** @var Service */
+    private $greetingService;
 
-    public function __construct(HelloService $helloService)
+    public function __construct(Service $greetingService)
     {
         parent::__construct();
-        $this->helloService = $helloService;
+        $this->greetingService = $greetingService;
     }
 
     public function configure()
@@ -31,7 +29,7 @@ class HelloCommand extends Command
     {
         $nameString = $input->getArgument('name');
         $name = new Name($nameString);
-        $greeting = $this->helloService->getGreeting($name);
+        $greeting = $this->greetingService->getGreeting($name);
         $output->writeln($greeting);
     }
 }
