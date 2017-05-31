@@ -3,6 +3,7 @@
 use Behat\Behat\Context\Context;
 use RomanNumeralsKata\Greeting\Name;
 use RomanNumeralsKata\Greeting\Service as GreetingService;
+use PHPUnit\Framework\Assert;
 
 class ServiceLevelContext implements Context
 {
@@ -34,6 +35,6 @@ class ServiceLevelContext implements Context
      */
     public function iShouldSee($expectedOutput)
     {
-        PHPUnit_Framework_Assert::assertEquals($expectedOutput, $this->result);
+        Assert::assertEquals($expectedOutput, $this->result);
     }
 }

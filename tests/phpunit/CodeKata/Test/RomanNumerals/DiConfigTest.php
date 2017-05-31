@@ -1,7 +1,7 @@
 <?php
 namespace CodeKata\Test\RomanNumerals;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use UltraLite\Container\Container;
 use RomanNumeralsKata\Application;
 

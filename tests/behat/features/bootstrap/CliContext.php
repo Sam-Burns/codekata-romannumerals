@@ -1,6 +1,7 @@
 <?php
 
 use Behat\Behat\Context\Context;
+use PHPUnit\Framework\Assert;
 
 class CliContext implements Context
 {
@@ -31,6 +32,6 @@ class CliContext implements Context
      */
     public function iShouldSee($expectedOutput)
     {
-        PHPUnit_Framework_Assert::assertEquals([$expectedOutput], $this->result);
+        Assert::assertEquals([$expectedOutput], $this->result);
     }
 }

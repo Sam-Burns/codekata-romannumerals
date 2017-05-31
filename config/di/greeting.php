@@ -1,6 +1,6 @@
 <?php
 
-use Interop\Container\ContainerInterface as Container;
+use Psr\Container\ContainerInterface as Container;
 
 return [
 
