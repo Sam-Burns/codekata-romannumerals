@@ -4,9 +4,3 @@ vendor/
 # PHPStorm
 .idea/
 
-# Netbeans
-nbproject/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-.nb-gradle/
