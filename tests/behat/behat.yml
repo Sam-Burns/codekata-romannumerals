@@ -3,14 +3,14 @@ default:
     suites:
 
         servicelevel:
-            paths:    [ %paths.base%/features/feature_files ]
+            paths:    [ '%paths.base%/features/feature_files' ]
             filters:
                 tags: ~@wip
             contexts: [ ServiceLevelContext ]
 
 
         cli:
-            paths:    [ %paths.base%/features/feature_files ]
+            paths:    [ '%paths.base%/features/feature_files' ]
             filters:
                 tags: ~@wip&&@critical
             contexts: [ CliContext ]

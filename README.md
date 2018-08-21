@@ -14,5 +14,5 @@ Here is an example of what they want to do:
 > 1997
 ```
 
-Legacy Corp are very keen that only contemporary, modern, industry standard best practices should be used on the project, because they want to learn how not to be old-fashioned and shit.
+Legacy Corp are very keen that only contemporary, modern, industry standard best practices should be used on the project, because they want to learn how not to be old-fashioned.
 Therefore, you will use BDD, TDD and pair programming on this project.
