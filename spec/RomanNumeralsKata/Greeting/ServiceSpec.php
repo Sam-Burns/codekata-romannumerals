@@ -1,5 +1,5 @@
 <?php
-namespace RomanNumeralsKata\Spec\RomanNumeralsKata\Greeting;
+namespace spec\RomanNumeralsKata\Greeting;
 
 use RomanNumeralsKata\Greeting\Name;
 use RomanNumeralsKata\Greeting\Service;

@@ -1,5 +1,5 @@
 <?php
-namespace RomanNumeralsKata\Spec\RomanNumeralsKata;
+namespace spec\RomanNumeralsKata;
 
 use RomanNumeralsKata\Application;
 use Symfony\Component\Console\Application as SymfonyApplication;

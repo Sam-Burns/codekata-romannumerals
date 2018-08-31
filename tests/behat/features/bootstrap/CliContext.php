@@ -1,5 +1,7 @@
 <?php
 
+namespace BehatContexts;
+
 use Behat\Behat\Context\Context;
 use PHPUnit\Framework\Assert;
 

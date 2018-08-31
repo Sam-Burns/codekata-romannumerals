@@ -1,5 +1,7 @@
 <?php
 
+namespace BehatContexts;
+
 use Behat\Behat\Context\Context;
 use RomanNumeralsKata\Greeting\Name;
 use RomanNumeralsKata\Greeting\Service as GreetingService;

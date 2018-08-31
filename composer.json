@@ -19,5 +19,11 @@
         "psr-0": {
             "RomanNumeralsKata\\": "src/"
         }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "BehatContexts\\": "tests/behat/features/bootstrap"
+        }
     }
 }
