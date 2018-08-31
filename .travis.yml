@@ -9,8 +9,8 @@ install:
 
 script:
     - ./vendor/bin/phpunit --config tests/phpunit/phpunit.xml;
-    - ./vendor/bin/phpspec run --config tests/phpspec/phpspec.yml --no-interaction;
-    - ./vendor/bin/behat --config tests/behat/behat.yml;
+    - ./vendor/bin/phpspec run --no-interaction;
+    - ./vendor/bin/behat;
 
 after_script:
     - php vendor/bin/coveralls -v
