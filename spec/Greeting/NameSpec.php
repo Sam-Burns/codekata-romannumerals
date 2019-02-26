@@ -4,9 +4,6 @@ namespace spec\RomanNumeralsKata\Greeting;
 use RomanNumeralsKata\Greeting\Name;
 use PhpSpec\ObjectBehavior;
 
-/**
- * @mixin Name
- */
 class NameSpec extends ObjectBehavior
 {
     function let()

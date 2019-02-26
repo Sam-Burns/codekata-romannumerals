@@ -12,7 +12,7 @@ class DiConfigTest extends TestCase
         // ARRANGE
         $diContainer = new Container();
         $diContainer->configureFromFile(__DIR__ . '/../../../../../config/di/application.php');
-        $diContainer->configureFromFile(__DIR__ . '/../../../../../config/di/greeting.php');
+        $diContainer->configureFromFile(__DIR__ . '/../../../../../config/di/domain.php');
 
         // ACT
         $result = $diContainer->get('roman-numerals-kata.application');

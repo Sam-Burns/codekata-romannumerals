@@ -16,7 +16,7 @@
     },
 
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "RomanNumeralsKata\\": "src/"
         }
     },
@@ -25,5 +25,13 @@
         "psr-4": {
             "BehatContexts\\": "tests/behat/features/bootstrap"
         }
+    },
+
+    "scripts": {
+        "test": [
+            "./vendor/bin/behat",
+            "./vendor/bin/phpspec run",
+            "./vendor/bin/phpunit"
+        ]
     }
 }

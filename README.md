@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/Sam-Burns/codekata-romannumerals.svg?branch=master)](https://travis-ci.org/Sam-Burns/codekata-romannumerals)
 
-Roman Numerals Code Kata
-========================
+## Roman Numerals Code Kata
 
 You have been hired as a consultant by Legacy Corp.
 
@@ -16,3 +15,11 @@ Here is an example of what they want to do:
 
 Legacy Corp are very keen that only contemporary, modern, industry standard best practices should be used on the project, because they want to learn how not to be old-fashioned.
 Therefore, you will use BDD, TDD and pair programming on this project.
+
+## Testing
+
+The test commands are in the `composer.json` file. They are:
+```
+> ./vendor/bin/phpspec run
+> ./vendor/bin/behat
+```

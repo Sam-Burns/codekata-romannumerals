@@ -1,0 +1,6 @@
+suites:
+  main:
+    namespace: RomanNumeralsKata
+    psr4_prefix: RomanNumeralsKata
+    spec_prefix: spec
+    src_path: src/
