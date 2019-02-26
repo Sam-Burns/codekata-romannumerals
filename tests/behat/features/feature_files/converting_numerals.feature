@@ -4,13 +4,12 @@ Feature: Converting numerals
   I want to convert the Roman Numerals to Arabic Numerals
 
 
-  @critical @wip
   Scenario: Converting a simple number
     Given my Roman Numeral is 'I'
     When I convert it
     Then I should get '1'
 
-  @wip
+  @wip @critical
   Scenario: Converting a simple number
     Given my Roman Numeral is 'MCMXCVII'
     When I convert it
