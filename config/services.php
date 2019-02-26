@@ -2,6 +2,7 @@
 
 use Psr\Container\ContainerInterface;
 use RomanNumeralsKata\Application\GreetingCommand;
+use RomanNumeralsKata\Application\NumeralConversionCommand;
 use Symfony\Component\Console\Application;
 
 return [
@@ -16,6 +17,7 @@ return [
         function (ContainerInterface $container): array {
             return [
                 $container->get(GreetingCommand::class),
+                $container->get(NumeralConversionCommand::class),
             ];
         },
 ];

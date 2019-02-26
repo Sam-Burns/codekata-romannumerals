@@ -9,7 +9,7 @@ Feature: Converting numerals
     When I convert it
     Then I should get '1'
 
-  @wip @critical
+  @critical
   Scenario: Converting a simple number
     Given my Roman Numeral is 'MCMXCVII'
     When I convert it
