@@ -12,7 +12,7 @@ class Number
 
     public static function fromRoman(string $romanNumerals): Number
     {
-        $number = new static(1);
+        $number = new static(strlen($romanNumerals));
         return $number;
     }
 

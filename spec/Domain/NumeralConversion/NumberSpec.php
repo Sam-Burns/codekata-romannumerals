@@ -16,4 +16,10 @@ class NumberSpec extends ObjectBehavior
         $this->beConstructedThrough('fromRoman', ['I']);
         $this->toArabic()->shouldBe(1);
     }
+
+    function it_can_convert_multi_symbol_roman_numerals_to_arabic()
+    {
+        $this->beConstructedThrough('fromRoman', ['II']);
+        $this->toArabic()->shouldBe(2);
+    }
 }
