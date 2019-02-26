@@ -22,4 +22,10 @@ class NumberSpec extends ObjectBehavior
         $this->beConstructedThrough('fromRoman', ['II']);
         $this->toArabic()->shouldBe(2);
     }
+
+    function it_can_understand_different_roman_symbols()
+    {
+        $this->beConstructedThrough('fromRoman', ['VI']);
+        $this->toArabic()->shouldBe(6);
+    }
 }

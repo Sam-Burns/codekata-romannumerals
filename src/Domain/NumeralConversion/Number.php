@@ -3,21 +3,30 @@ namespace RomanNumeralsKata\Domain\NumeralConversion;
 
 class Number
 {
-    private $numberValue;
+    private $romanValue;
 
-    private function __construct(int $numberValue)
+    private function __construct(string $romanValue)
     {
-        $this->numberValue = $numberValue;
+        $this->romanValue = $romanValue;
     }
 
     public static function fromRoman(string $romanNumerals): Number
     {
-        $number = new static(strlen($romanNumerals));
-        return $number;
+        return new static($romanNumerals);
     }
 
-    public function toArabic(): int
+    public function toArabic() : int
     {
-        return $this->numberValue;
+        $numberValue = 0;
+
+        foreach (str_split($this->romanValue) as $romanSymbolValue) {
+
+            $romanSymbol = new RomanSymbol($romanSymbolValue);
+            $valueOfSymbol = $romanSymbol->toInt();
+            $numberValue += $valueOfSymbol;
+
+        }
+
+        return $numberValue;
     }
 }
