@@ -13,12 +13,23 @@ class CliContext implements Context
     /** @var string */
     private $result;
 
+    /** @var string */
+    private $romanNumeral;
+
     /**
      * @Given my name is :name
      */
     public function myNameIs($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @Given my Roman Numeral is :romanNumeral
+     */
+    public function myRomanNumeralIs($romanNumeral)
+    {
+        $this->romanNumeral = $romanNumeral;
     }
 
     /**
@@ -30,7 +41,15 @@ class CliContext implements Context
     }
 
     /**
-     * @Then I should see :expectedOutput
+     * @When I convert it
+     */
+    public function iConvertIt()
+    {
+        exec('php scripts/run.php roman-numerals ' . $this->romanNumeral . ' 2>/dev/null', $this->result);
+    }
+
+    /**
+     * @Then I should see/get :expectedOutput
      */
     public function iShouldSee($expectedOutput)
     {

@@ -6,13 +6,16 @@ use Behat\Behat\Context\Context;
 use RomanNumeralsKata\Domain\Greeting\Name;
 use RomanNumeralsKata\Domain\Greeting\Greeter as GreetingService;
 use PHPUnit\Framework\Assert;
+use RomanNumeralsKata\Domain\NumeralConversion\Number;
 
 class ServiceLevelContext implements Context
 {
     /** @var Name */
     private $name;
 
-    /** @var string */
+    /** @var Number */
+    private $number;
+
     private $result;
 
     /**
@@ -33,10 +36,26 @@ class ServiceLevelContext implements Context
     }
 
     /**
-     * @Then I should see :expectedOutput
+     * @Then I should see/get :expectedOutput
      */
     public function iShouldSee(string $expectedOutput)
     {
         Assert::assertEquals($expectedOutput, $this->result);
+    }
+
+    /**
+     * @Given my Roman Numeral is :romanNumerals
+     */
+    public function myRomanNumeralIs($romanNumerals)
+    {
+        $this->number = Number::fromRoman($romanNumerals);
+    }
+
+    /**
+     * @When I convert it
+     */
+    public function iConvertIt()
+    {
+        $this->result = $this->number->toArabic();
     }
 }
