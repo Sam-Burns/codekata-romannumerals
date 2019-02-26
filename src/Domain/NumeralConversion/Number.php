@@ -3,6 +3,7 @@ namespace RomanNumeralsKata\Domain\NumeralConversion;
 
 class Number
 {
+    /** @var string */
     private $romanValue;
 
     private function __construct(string $romanValue)
@@ -17,16 +18,35 @@ class Number
 
     public function toArabic() : int
     {
-        $numberValue = 0;
+        $symbolsInReverse = $this->getSymbolsInReverse();
 
-        foreach (str_split($this->romanValue) as $romanSymbolValue) {
+        $total = 0;
 
-            $romanSymbol = new RomanSymbol($romanSymbolValue);
-            $valueOfSymbol = $romanSymbol->toInt();
-            $numberValue += $valueOfSymbol;
+        $previousValue = 0;
 
+        foreach ($symbolsInReverse as $symbol) {
+            if ($symbol->lessThan($previousValue)) {
+                $total -= $symbol->toInt();
+            } else {
+                $total += $symbol->toInt();
+            }
+            $previousValue = $symbol->toInt();
         }
+        return $total;
+    }
 
-        return $numberValue;
+    /**
+     * @return RomanSymbol[]
+     */
+    private function getSymbolsInReverse() : array
+    {
+        $symbols = array_map(
+            function ($symbolString) {
+                return new RomanSymbol($symbolString);
+            },
+            str_split($this->romanValue)
+        );
+
+        return array_reverse($symbols);
     }
 }

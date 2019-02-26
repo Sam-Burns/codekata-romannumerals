@@ -24,4 +24,14 @@ class RomanSymbol
     {
         return static::SYMBOLS[$this->romanSymbolValue];
     }
+
+    public function lessThan(int $anotherValue): bool
+    {
+        return $this->toInt() < $anotherValue;
+    }
+
+    public function greaterThan(int $anotherValue): bool
+    {
+        return $this->toInt() > $anotherValue;
+    }
 }

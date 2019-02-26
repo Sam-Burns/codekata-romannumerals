@@ -16,4 +16,11 @@ class RomanSymbolSpec extends ObjectBehavior
         $this->beConstructedWith('M');
         $this->toInt()->shouldBe(1000);
     }
+
+    function it_knows_if_it_is_greater_than_something()
+    {
+        $this->beConstructedWith('V');
+        $this->greaterThan(6)->shouldBe(false);
+        $this->greaterThan(4)->shouldBe(true);
+    }
 }

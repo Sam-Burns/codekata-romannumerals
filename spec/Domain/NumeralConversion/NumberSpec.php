@@ -28,4 +28,10 @@ class NumberSpec extends ObjectBehavior
         $this->beConstructedThrough('fromRoman', ['VI']);
         $this->toArabic()->shouldBe(6);
     }
+
+    function it_can_handle_cases_where_symbols_are_subtracted()
+    {
+        $this->beConstructedThrough('fromRoman', ['IV']);
+        $this->toArabic()->shouldBe(4);
+    }
 }
