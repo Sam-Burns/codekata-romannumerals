@@ -1,14 +1,15 @@
 <?php
 
-use Psr\Container\ContainerInterface as Container;
+use Psr\Container\ContainerInterface;
 
 return [
 
     'roman-numerals-kata.application' =>
-        function (Container $container) {
+        function (ContainerInterface $container) {
             $consoleApplication = new \Symfony\Component\Console\Application();
             $greetingCommand    = $container->get('roman-numerals-kata.greeting.command');
-            return new \RomanNumeralsKata\Application($consoleApplication, $greetingCommand);
+            $consoleApplication->addCommands([$greetingCommand]);
+            return $consoleApplication;
         },
 
 ];

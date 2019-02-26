@@ -1,20 +1,22 @@
 <?php
-namespace RomanNumeralsKata\Greeting;
+namespace RomanNumeralsKata\Application;
 
+use RomanNumeralsKata\Domain\Greeting\Greeter;
+use RomanNumeralsKata\Domain\Greeting\Name;
 use Symfony\Component\Console\Command\Command as SymfonyConsoleCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Command extends SymfonyConsoleCommand
+class GreetingCommand extends SymfonyConsoleCommand
 {
-    /** @var Service */
-    private $greetingService;
+    /** @var Greeter */
+    private $greeter;
 
-    public function __construct(Service $greetingService)
+    public function __construct(Greeter $greeter)
     {
         parent::__construct();
-        $this->greetingService = $greetingService;
+        $this->greeter = $greeter;
     }
 
     public function configure()
@@ -29,7 +31,7 @@ class Command extends SymfonyConsoleCommand
     {
         $nameString = $input->getArgument('name');
         $name = new Name($nameString);
-        $greeting = $this->greetingService->getGreeting($name);
+        $greeting = $this->greeter->getGreeting($name);
         $output->writeln($greeting);
     }
 }

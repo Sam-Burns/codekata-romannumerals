@@ -1,18 +1,18 @@
 <?php
 
-use Psr\Container\ContainerInterface as Container;
+use Psr\Container\ContainerInterface;
 
 return [
 
     'roman-numerals-kata.greeting.service' =>
-        function (Container $container) {
-            return new RomanNumeralsKata\Greeting\Service();
+        function (ContainerInterface $container) {
+            return new RomanNumeralsKata\Domain\Greeting\Greeter();
         },
 
     'roman-numerals-kata.greeting.command' =>
-        function (Container $container) {
+        function (ContainerInterface $container) {
             $greetingService = $container->get('roman-numerals-kata.greeting.service');
-            return new \RomanNumeralsKata\Greeting\Command($greetingService);
+            return new \RomanNumeralsKata\Application\GreetingCommand($greetingService);
         },
 
 ];

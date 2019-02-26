@@ -1,11 +1,10 @@
 <?php
-namespace spec\RomanNumeralsKata\Greeting;
+namespace spec\RomanNumeralsKata\Domain\Greeting;
 
-use RomanNumeralsKata\Greeting\Name;
-use RomanNumeralsKata\Greeting\Service;
+use RomanNumeralsKata\Domain\Greeting\Name;
 use PhpSpec\ObjectBehavior;
 
-class ServiceSpec extends ObjectBehavior
+class GreeterSpec extends ObjectBehavior
 {
     function it_can_return_a_greeting()
     {

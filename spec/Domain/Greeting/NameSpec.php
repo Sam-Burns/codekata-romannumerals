@@ -1,7 +1,6 @@
 <?php
-namespace spec\RomanNumeralsKata\Greeting;
+namespace spec\RomanNumeralsKata\Domain\Greeting;
 
-use RomanNumeralsKata\Greeting\Name;
 use PhpSpec\ObjectBehavior;
 
 class NameSpec extends ObjectBehavior

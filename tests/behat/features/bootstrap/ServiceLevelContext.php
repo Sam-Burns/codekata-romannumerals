@@ -3,8 +3,8 @@
 namespace BehatContexts;
 
 use Behat\Behat\Context\Context;
-use RomanNumeralsKata\Greeting\Name;
-use RomanNumeralsKata\Greeting\Service as GreetingService;
+use RomanNumeralsKata\Domain\Greeting\Name;
+use RomanNumeralsKata\Domain\Greeting\Greeter as GreetingService;
 use PHPUnit\Framework\Assert;
 
 class ServiceLevelContext implements Context
@@ -18,7 +18,7 @@ class ServiceLevelContext implements Context
     /**
      * @Given my name is :name
      */
-    public function myNameIs($name)
+    public function myNameIs(string $name)
     {
         $this->name = new Name($name);
     }
@@ -35,7 +35,7 @@ class ServiceLevelContext implements Context
     /**
      * @Then I should see :expectedOutput
      */
-    public function iShouldSee($expectedOutput)
+    public function iShouldSee(string $expectedOutput)
     {
         Assert::assertEquals($expectedOutput, $this->result);
     }

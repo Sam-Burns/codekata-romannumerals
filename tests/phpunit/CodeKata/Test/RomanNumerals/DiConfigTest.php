@@ -2,8 +2,8 @@
 namespace CodeKata\Test\RomanNumerals;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Console\Application;
 use UltraLite\Container\Container;
-use RomanNumeralsKata\Application;
 
 class DiConfigTest extends TestCase
 {

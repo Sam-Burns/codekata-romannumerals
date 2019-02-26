@@ -1,7 +1,7 @@
 <?php
-namespace RomanNumeralsKata\Greeting;
+namespace RomanNumeralsKata\Domain\Greeting;
 
-class Service
+class Greeter
 {
     public function getGreeting(Name $name): string
     {

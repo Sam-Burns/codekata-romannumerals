@@ -1,9 +1,8 @@
 <?php
-namespace RomanNumeralsKata\Greeting;
+namespace RomanNumeralsKata\Domain\Greeting;
 
 class Name
 {
-    /** @var string */
     private $nameAsString;
 
     public function __construct(string $nameAsString)
