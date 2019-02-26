@@ -13,6 +13,7 @@ class RomanSymbol
         'M' => 1000,
     ];
 
+    /** @var string */
     private $romanSymbolValue;
 
     public function __construct(string $romanSymbolValue)
@@ -20,18 +21,13 @@ class RomanSymbol
         $this->romanSymbolValue = $romanSymbolValue;
     }
 
-    public function toInt(): int
+    public function toInt() : int
     {
         return static::SYMBOLS[$this->romanSymbolValue];
     }
 
-    public function lessThan(int $anotherValue): bool
+    public function lessThan(RomanSymbol $another) : bool
     {
-        return $this->toInt() < $anotherValue;
-    }
-
-    public function greaterThan(int $anotherValue): bool
-    {
-        return $this->toInt() > $anotherValue;
+        return $this->toInt() < $another->toInt();
     }
 }

@@ -2,6 +2,7 @@
 namespace spec\RomanNumeralsKata\Domain\NumeralConversion;
 
 use PhpSpec\ObjectBehavior;
+use RomanNumeralsKata\Domain\NumeralConversion\RomanSymbol;
 
 class RomanSymbolSpec extends ObjectBehavior
 {
@@ -17,10 +18,11 @@ class RomanSymbolSpec extends ObjectBehavior
         $this->toInt()->shouldBe(1000);
     }
 
-    function it_knows_if_it_is_greater_than_something()
+    function it_knows_if_it_is_less_than_another()
     {
         $this->beConstructedWith('V');
-        $this->greaterThan(6)->shouldBe(false);
-        $this->greaterThan(4)->shouldBe(true);
+
+        $this->lessThan(new RomanSymbol('X'))->shouldBe(true);
+        $this->lessThan(new RomanSymbol('I'))->shouldBe(false);
     }
 }

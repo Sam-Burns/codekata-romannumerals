@@ -18,35 +18,31 @@ class Number
 
     public function toArabic() : int
     {
-        $symbolsInReverse = $this->getSymbolsInReverse();
-
         $total = 0;
+        $symbolAfterThisOne = null;
 
-        $previousValue = 0;
-
-        foreach ($symbolsInReverse as $symbol) {
-            if ($symbol->lessThan($previousValue)) {
-                $total -= $symbol->toInt();
-            } else {
-                $total += $symbol->toInt();
-            }
-            $previousValue = $symbol->toInt();
+        foreach ($this->getSymbolsInReverse() as $symbol) {
+            $total += $this->getActualValueOfSymbol($symbol, $symbolAfterThisOne);
+            $symbolAfterThisOne = $symbol;
         }
+
         return $total;
     }
 
-    /**
-     * @return RomanSymbol[]
-     */
-    private function getSymbolsInReverse() : array
+    private function getSymbolsInReverse() : \Generator
     {
-        $symbols = array_map(
-            function ($symbolString) {
-                return new RomanSymbol($symbolString);
-            },
-            str_split($this->romanValue)
-        );
+        $pointer = strlen($this->romanValue) - 1;
 
-        return array_reverse($symbols);
+        while ($pointer >= 0) {
+            yield new RomanSymbol($this->romanValue[$pointer]);
+            --$pointer;
+        }
+    }
+
+    private function getActualValueOfSymbol(RomanSymbol $romanSymbol, ? RomanSymbol $nextSymbol) : int
+    {
+        $absoluteValue = $romanSymbol->toInt();
+        $isNegative = $nextSymbol && $romanSymbol->lessThan($nextSymbol);
+        return $isNegative ? -$absoluteValue : $absoluteValue;
     }
 }
