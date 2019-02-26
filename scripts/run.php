@@ -2,11 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$diContainer = new UltraLite\Container\Container();
+$container = (new DI\ContainerBuilder())->addDefinitions(__DIR__ . '/../config/services.php')->build();
 
-$diContainer->configureFromFile(__DIR__ . '/../config/di/application.php');
-$diContainer->configureFromFile(__DIR__ . '/../config/di/domain.php');
-
-$application = $diContainer->get('roman-numerals-kata.application');
+$application = $container->get('application');
 
 $application->run();
