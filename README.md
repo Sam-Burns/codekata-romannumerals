@@ -22,4 +22,5 @@ The test commands are in the `composer.json` file. They are:
 ```
 > ./vendor/bin/phpspec run
 > ./vendor/bin/behat
+> ./vendor/bin/phpunit
 ```
